@@ -1,6 +1,6 @@
 """
 Program: Simple Calculator 
-
+Author: Anas Tawalbeh
 Simple calcuatro help the user calculate the basic 4 operations including:
 addition, subtraction, multiplication and division
 Significant constants
@@ -19,24 +19,27 @@ Significant constants
 number1=int(input("Insert the first value"))
 number2=int(input("Insert the second value"))
 
-select = int(input("Select operations form 1, 2, 3, 4 :"))
 
-addition=number1+number2
-subtraction=number1-number2
-multiplication=number1*number2
-division=number1/number2
+operater = str(input("Select operations form +, -, *, / :"))
+if isinstance (number1,int)== True and isinstance(number2,int)== True :
+   addition=number1+number2
+   subtraction=number1-number2
+   multiplication=number1*number2
+   division=number1/number2
+else : 
+   print("you must to enter number ")
 
-while True:
-    if select == 1:
-       print(f"The addition for the two values is equal to: ,{addition}")
 
-    elif select == 2:
-       print(f"The subraction for the two values is equal to: ,{subtraction}")
+if operater == "+" :
+       print(f"The addition for the two values is equal to: {addition}")
 
-    elif select == 3:
-       print(f"The multiplication for the two values is equal to: ,{multiplication}")
+elif operater ==  "-" :
+       print(f"The subraction for the two values is equal to: {subtraction}")
 
-    elif select == 4:
-       print(f"The division for the two values is equal to: ,{division}")
-    else:
+elif operater == "*" :
+       print(f"The multiplication for the two values is equal to: {multiplication}")
+
+elif operater == "/" :
+       print(f"The division for the two values is equal to: {division}")
+else:
         print("invalid input")
