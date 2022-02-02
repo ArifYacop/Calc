@@ -15,9 +15,15 @@ Significant constants
  4. The outputs are
          computation result
 """
+def input_number(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("That was not a number")
 
-number1=int(input("Insert the first value"))
-number2=int(input("Insert the second value"))
+number1=input_number("Enter first number: ")
+number2=input_number("Enter first number: ")
 
 
 operater = str(input("Select operations form +, -, *, / :"))
