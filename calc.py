@@ -35,7 +35,6 @@ if isinstance (number1,int)== True and isinstance(number2,int)== True :
 else : 
    print("you must to enter number ")
 
-
 if operater == "+" :
        print(f"The addition for the two values is equal to: {addition}")
 
