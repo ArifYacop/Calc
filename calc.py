@@ -1,6 +1,6 @@
 """
 Program: Simple Calculator 
-Author: Anas Tawalbeh
+Author: arif
 Simple calcuatro help the user calculate the basic 4 operations including:
 addition, subtraction, multiplication and division
 Significant constants
@@ -15,36 +15,90 @@ Significant constants
  4. The outputs are
          computation result
 """
-def input_number(prompt):
-    while True:
-        try:
-            return int(input(prompt))
-        except ValueError:
-            print("That was not a number")
-
-number1=input_number("Enter first number: ")
-number2=input_number("Enter secount number: ")
+import sys
+result = 0 
+num1 = 0
+num2 = 0 
 
 
-operater = str(input("Select operations form +, -, *, / :"))
-if isinstance (number1,int)== True and isinstance(number2,int)== True :
-   addition=number1+number2
-   subtraction=number1-number2
-   multiplication=number1*number2
-   division=number1/number2
-else : 
-   print("you must to enter number ")
+def num1():
+       global num1 
+       try:
+              num1 = float(input("put your frist number : "))
+              if num1 == isinstance(num1,float):
+                     num1()
+       except ValueError :
+              print("is not a number put number agiat")
+              num1()
 
-if operater == "+" :
-       print(f"The addition for the two values is equal to: {addition}")
+def num2():
+       global num2 
+       try:
+              num2 = float(input("put your second number"))
+              if num2 == isinstance(num2,float):
+                     num2()
+       except ValueError :
+              print("is not a number plase put the nomber againt")
+              num2()
 
-elif operater ==  "-" :
-       print(f"The subraction for the two values is equal to: {subtraction}")
 
-elif operater == "*" :
-       print(f"The multiplication for the two values is equal to: {multiplication}")
+def operator(): 
+       global result
+       operation = input(
+              """select the operation 
+              + for addition 
+              - for subtraction 
+              * for multiplication 
+              / for divition """)
+       if (operation =='+' or operation == '-' or operation == '*' or operation == '/'):
+              if operation == '+' :
+                     addition()
+              elif operation == '-' :
+                     subtraction()
+              elif operation == '*' :
+                     multiplication()
+              elif operation == '/' :
+                     divition()
+              else :
+                     sys.exit("thanks you")
+       else :
+              print("invalid operation")
+              operator()
 
-elif operater == "/" :
-       print(f"The division for the two values is equal to: {division}")
-else:
-        print("invalid input")
+def addition() :
+       result = num1 + num2 
+       print(f"your result equal to : {result} ")
+       
+def subtraction() :
+       result = num1 - num2
+       print(f"your result equal to : {result} ")
+       
+def multiplication() : 
+       result = num1 * num2
+       print(f"your result equal to : {result} ")
+       
+def divition() : 
+       result = num1 / num2 
+       print(f"your result equal to : {result} ")
+       
+
+def againt() : 
+       loop = str(input("select Y for continud "))
+       if loop.upper() == 'Y' : 
+              num1()
+              num2()
+              operator()
+       else : 
+              sys.exit("thanks you")
+
+
+num1()
+num2()
+operator()
+
+
+
+
+
+       
+
