@@ -23,7 +23,7 @@ def input_number(prompt):
             print("That was not a number")
 
 number1=input_number("Enter first number: ")
-number2=input_number("Enter first number: ")
+number2=input_number("Enter secount number: ")
 
 
 operater = str(input("Select operations form +, -, *, / :"))
